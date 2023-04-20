@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - List</title>
+	<style>
+		* {
+			font-family:"나눔고딕";
+			/* padding:0px; margin:0px; */
+		}
+		ul.u1 {
+			border:1px solid red;
+			list-style-type:circle;
+			padding:20px; 
+			background:mediumseagreen;
+		}
+		ul.u1 li {
+			border:1px solid blue;
+			background:lightgray;
+			margin:5px;
+			padding-left:5px;
+		}
+		
+		ul.u2 {
+			border:1px solid red;
+			list-style-type:none;
+			padding:0px;
+		}
+		ul.u2 li {
+			/* border:1px solid blue; */
+			/* display:inline-block; */
+			/* padding:5px; */
+			width:100px;
+			text-align:center;
+			/* margin-right:15px;  */
+			float:left;
+		}
+		ul.u2 a {
+			text-decoration:none;
+			display:inline-block;
+			background:tomato;
+			width:100px;
+			padding:10px 5px;
+			margin-right:5px;
+			color:white;
+			font-size:12px;
+			border:1px solid lightgray;
+			/* font-weight:bold; */
+		}
+		ul.u2 li:nth-child(1) {
+			/* background:tomato; */
+			margin-left:30px;
+		}		
+	</style>
+</head>
+<body>
+	<h1>List - UL, OL</h1>
+	<ul class="u1">
+		<li>JAVA</li>
+		<li>Oracle</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JavaScript</li>
+	</ul>
+	
+	<h3>Navigation Menu</h3>
+	<ul class="u2">
+		<li><a href="#">로그인</a></li>
+		<li><a href="#">회원가입</a></li>
+		<li><a href="#">마이페이지</a></li>
+		<li><a href="#">공지사항</a></li>
+		<li><a href="#">게시판</a></li>
+		<li><a href="#">관리자</a></li>
+	</ul>
+	
+</body>
+</html>
+
+
+
+
+
+

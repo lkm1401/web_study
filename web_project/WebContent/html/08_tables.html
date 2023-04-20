@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Tables</title>
+	<style>
+		table,th,td {
+			border:1px solid gray;
+			border-collapse:collapse;
+		}
+		th, td {
+			font-size:12px;
+			padding:10px 20px ; /* top, bottom: 10px   right,left:20px */
+			/*padding-top:10px;
+			padding-right:10px;
+			padding-bottom:10px;
+			padding-left:10px;*/
+		}
+		tr:nth-child(even) {
+		  background-color: #D6EEEE;
+		}
+	</style>
+</head>
+<body>
+	<h1>주소록</h1>
+	<table>
+		<tr>
+			<!-- <th>번호</th> -->
+			<th colspan=2>번호/성명</th>
+			<th>연락처</th>
+			<th>주소</th>
+		</tr>
+		<tr>
+			<td rowspan=2>1</td>
+			<td>홍길동</td>
+			<td>010-1234-7894</td>
+			<td>서울시 강남구 역삼동</td>
+		</tr>
+		<tr>
+			<!-- <td>2</td> -->
+			<td>홍길순</td>
+			<td>010-1234-7895</td>
+			<td>서울시 마포구</td>
+		</tr>	
+		<tr>
+			<td>3</td>
+			<td>테스트</td>
+			<td>010-1234-7896</td>
+			<td>부산시 해운대구</td>
+		</tr>	
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+

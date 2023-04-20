@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Id Attribute</title>
+	<style>
+		#header_style {
+			color:tomato;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="header_style">Id Attribute</h1>
+	<ol>
+		<li>JAVA</li>
+		<li id="header_style">ORACLE</li>
+		<li>HTML</li>
+		<li id="header_style">CSS</li>
+	</ol>
+	<hr>
+	<h1 id="h1">Hello World</h1>
+	<h1 id="h1">Hello World222222</h1>
+	<button onclick="change()">문자 체인지</button>
+	
+	<script>
+		function change(){
+			document.getElementById("h1").innerHTML = "Have a nice day!!!";			
+		}	
+	</script>	
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Table</title>
+	<style>
+		* {
+			font-family:"나눔고딕";
+		}
+		table {
+			width:55%; height:450px;
+		}
+		table, th, td {
+			border:1px solid lightgray;
+			border-collapse:collapse;
+			font-size:13px;
+		}
+		tr:first-child {
+			background:mediumseagreen;
+			color:white;
+		}
+		tr:last-child td {
+			border-color:white;
+			border-top:lightgray;
+			background:white;
+			/* text-align:center; */
+		}
+		td {
+			text-align:center;
+		}
+		tr td:nth-child(2) {
+			width:450px;
+			text-align:left;
+			text-indent:30px;
+			/* padding-left:150px; */
+		}
+		tr:nth-child(even) {
+			background:lightgray;
+		}
+		tr:hover {
+			background:tomato;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<h1>공지사항</h1>
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>조회수</th>
+			<th>등록날짜</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>[공지]CGV 사이트 점검 예정입니다.</td>
+			<td>123</td>
+			<td>2023-04-20</td>
+		</tr>
+		<tr>
+			<td colspan="4"><< 1 2 3 4 5 >></td>			
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
