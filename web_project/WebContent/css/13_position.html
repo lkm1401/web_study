@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Position</title>
+	<style>
+		span {
+			background:tomato;
+			padding:10px;
+		}
+		span.s2 {
+			position:relative;
+			left:100px;
+			top:50px;
+		}
+		div {
+			/* position:relative;  */
+			border:1px solid blue;
+			width:50%;
+			height:500px;
+			margin:auto;
+		}
+		div img {
+			position:absolute;
+			top:250px;
+			left:450px;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>Position - relative</h1>
+	<span class="s1">relative 1</span>
+	<span class="s2">relative 2</span>
+	<span class="s3">relative 3</span>
+	
+	<h1>Position - absolute</h1>
+	<div>
+		<img src="h1_cgv.png">
+	</div>
+</body>
+</html>

@@ -39,12 +39,12 @@
 </head>
 <body>
 	<h1>Display</h1>
-	<div>
+	<div id="d1">
 		<span class="span_bg">display : none</span>
 		<img src="img_display.jpg">
 		<button type="button" onclick="btn_click('remove')">Remove</button>
 	</div>
-	<div>
+	<div id="d2">
 		<span class="span_bg">visibility : hidden</span>
 		<img src="img_display.jpg">
 		<button type="button" onclick="btn_click('hide')">Hide</button>
@@ -57,11 +57,35 @@
 	
 	<script>
 		function btn_click(btnName){
-			alert(btnName + "--> click");
+			if(btnName == 'remove'){
+				/* display:none */
+				var d1 = document.getElementById("d1");
+				d1.style.display = "none";
+			}else if(btnName == 'hide'){
+				var d2 = document.getElementById("d2");
+				d2.style.visibility = "hidden";
+			}else if(btnName == 'reset'){
+				var d1 = document.getElementById("d1");
+				var d2 = document.getElementById("d2");
+				d1.style.display = "inline-block";
+				d2.style.visibility = "visible";
+			}
+			
 		}
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
