@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Display</title>
+	<style>
+		div {
+			border:1px solid lightgray;
+			width:280px;
+			text-align:center;
+			display:inline-block;
+			margin:0px 5px;
+		}
+		div img {
+			width:250px;
+		}
+		div span {
+			display:inline-block;
+			margin:15px 0px;
+		}
+		div button {
+			width:250px;
+			margin:15px 0px;
+			background:mediumseagreen;
+			color:white;
+			border:none;
+			border-radius:5px;
+			padding:10px 0px;
+			font-weight:bold;
+		}
+		.span_bg {
+			background:lightgray;
+			color:red;
+		}
+		button:hover {
+			cursor:pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Display</h1>
+	<div>
+		<span class="span_bg">display : none</span>
+		<img src="img_display.jpg">
+		<button type="button" onclick="btn_click('remove')">Remove</button>
+	</div>
+	<div>
+		<span class="span_bg">visibility : hidden</span>
+		<img src="img_display.jpg">
+		<button type="button" onclick="btn_click('hide')">Hide</button>
+	</div>
+	<div>
+		<span>Reset</span>
+		<img src="img_display.jpg">
+		<button type="button" onclick="btn_click('reset')">Reset All</button>
+	</div>
+	
+	<script>
+		function btn_click(btnName){
+			alert(btnName + "--> click");
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
