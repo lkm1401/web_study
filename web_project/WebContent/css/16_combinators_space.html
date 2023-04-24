@@ -4,12 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Combinators</title>
 	<style>
-		body div section p {
+		body div section p { /* 자손 */
 			background:tomato;
 		}
-		body div > p {
+		body div > p { /* 자식 */
 			background:mediumseagreen;
 		}
+		body div + p {  /* + : 이웃한 하나의 태그 선택 */
+			/* background:yellow; */
+		}
+		body div ~ p {  /* ~ : 이웃한 전체 태그 선택 */
+			background:yellow;
+		}
+		
 	</style>
 </head>
 <body>
@@ -25,5 +32,14 @@
 	
 	<p>Paragraph 4. Not in a div.</p>
 	<p>Paragraph 5. Not in a div.</p>
+	
+	<div>
+	  <p>Paragraph 6 in the div.</p>
+	  <p>Paragraph 7 in the div.</p>
+	  <section><p>Paragraph 8 in the div.</p></section>
+	</div>
+	
+	<p>Paragraph 9. Not in a div.</p>
+	<p>Paragraph 10. Not in a div.</p>
 </body>
 </html>
