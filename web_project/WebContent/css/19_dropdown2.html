@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Dropdown</title>
+	<style>
+		div.dropdown {
+			position:relative;
+			border:1px solid red;
+			/* overflow:hidden; */
+			height:100px;
+		}
+		div.dropdown-content {
+			border:1px solid blue;
+			position:absolute; 
+			top:33px;
+			background:tomato;
+			width:100%; 
+			height:50px;
+			display:none;
+		}
+		div.dropdown:hover .dropdown-content {
+			display:block;
+		}
+		ul {
+			list-style-type:none;
+			padding:0px; margin:0px;
+		}
+		ul li {
+			float:left;
+		}
+		ul li a {
+			display:block;
+			padding: 8px 20px;
+			background:green;
+			color:white;
+			text-decoration:none;
+			font-size:13px;
+			border:1px solid lightgray;
+		}
+	</style>
+</head>
+<body>
+	<h1>Dropdown Menu</h1>
+	<div class="dropdown">
+		<ul class="dropdown-btn">
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+			<li><a href="#">고객센터</a></li>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="#">게시판</a></li>
+		</ul>
+		<div class="dropdown-content">
+			<a href="#">Sub Menu1</a>
+			<a href="#">Sub Menu2</a>
+			<a href="#">Sub Menu3</a>
+		</div>
+	</div>	
+</body>
+</html>
+
+
+
+
+
+
+

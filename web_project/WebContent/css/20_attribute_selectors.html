@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS - Attribute Selectors</title>
+	<style>
+		a[target='_self'] {
+			background:tomato;
+		}
+		img {
+			margin:10px;
+		}
+		img[title~='logo'] {
+			border:5px solid tomato;
+		}
+		img[class^='cgv'] {
+			opacity:0.5;
+		}
+		img[class|='cgv']:hover {
+			opacity:1;
+		}
+		img[class$='test'] {
+			border:3px dotted green;
+		}
+		img[class*='cg'] {
+			outline:5px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Attribute Selectors</h1>
+	<a href="#">Naver</a>
+	<a href="#" target="_blank">Google</a>
+	<a href="#" target="_self">Daum</a>
+	<hr>
+	<img src="h1_cgv.png" title="cgv logo" class="cgv-logo">
+	<img src="h1_cgv.png" title = "cgv"  class = "cgv-img">
+	<img src="h1_cgv.png" title = "logo" class="cgvlogo">
+	<img src="h1_cgv.png" title = "logo" class="cgvtest">
+</body>
+</html>
+
+
+
+
