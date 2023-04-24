@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Combinators</title>
+	<style>
+		body div section p {
+			background:tomato;
+		}
+		body div > p {
+			background:mediumseagreen;
+		}
+	</style>
+</head>
+<body>
+	<h2>Descendant(자손) Selector : [selector] + space</h2>
+
+	<p>The descendant selector matches all elements that are descendants of a specified element.</p>
+	
+	<div>
+	  <p>Paragraph 1 in the div.</p>
+	  <p>Paragraph 2 in the div.</p>
+	  <section><p>Paragraph 3 in the div.</p></section>
+	</div>
+	
+	<p>Paragraph 4. Not in a div.</p>
+	<p>Paragraph 5. Not in a div.</p>
+</body>
+</html>
