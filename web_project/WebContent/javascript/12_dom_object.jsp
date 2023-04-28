@@ -28,9 +28,13 @@
 		padding:8px 0;
 		color:white;
 	}
+	div.top_menu > ul > li > a:hover {
+		text-decoration:underline;
+	}
 	div#menu div.sub_menu {
 		height:150px;
 		background:tomato;
+		display:none;
 	}
 </style>
 <script>
@@ -45,16 +49,27 @@
 		m_list[2].style.textDecoration = "underline";
 		m_list[2].style.fontWeight = "bold";
 		
-		document.getElementById("menu").style.border = "1px solid blue";
-		
+		document.getElementById("menu").style.border = "1px solid blue";		
 	}
+	
+	function show(){
+		let checkValue = document.getElementsByClassName("sub_menu")[0].id;
+		if(checkValue == 'hide'){
+			document.getElementsByClassName("sub_menu")[0].style.display = 'block';
+			document.getElementsByClassName("sub_menu")[0].id = 'show';
+		}else{
+			document.getElementsByClassName("sub_menu")[0].style.display = 'none';
+			document.getElementsByClassName("sub_menu")[0].id = 'hide';
+		}
+	}
+	
 </script>
 </head>
 <body>
 	<h1>Document Object Model</h1>
 	<h1>Document Object Model</h1>
 	<div id="menu">
-		<div class="top_menu" onclick="test()">
+		<div class="top_menu" onclick="show()">
 			<ul>
 				<li><a href="#" class="m">로그인</a></li>
 				<li><a href="#" class="m">회원가입</a></li>
@@ -63,7 +78,7 @@
 				<li><a href="#" class="m">게시판</a></li>
 			</ul>
 		</div>
-		<div class="sub_menu"></div>
+		<div class="sub_menu" id="hide"></div>
 	</div>	
 	
 </body>
