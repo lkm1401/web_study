@@ -28,6 +28,7 @@
 				$("img").css("width","30%");
 			}
 		});
+		
 		/* $("span#logo").click(function(){
 			//alert("이미지 호출");
 			$("img").attr("src","../images/logo.png");
