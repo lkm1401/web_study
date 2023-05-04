@@ -26,6 +26,6 @@ $(document).ready(function(){
 		}
 		output += "</table>";
 		
-		$("body").append(output);	
+		$("div").append(output);	
 		
 	});
