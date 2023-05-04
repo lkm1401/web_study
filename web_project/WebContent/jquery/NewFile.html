@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kobis 박스오피스</title>
+<script src="http://localhost:9000/web_project/jquery/jquery-3.6.4.min.js"></script>
+<script>
+	$(document).ready(function(){
+		//실행 버튼 이벤트
+		$("button").click(function(){
+			
+			if($("select").val() == "default"){
+				alert("박스오피스를 선택해주세요");
+				$("select").focus();
+				return false;
+			}else if($("input").val() == ""){
+				alert("날짜를 입력해주세요");
+				$("input").focus();
+				return false;
+			}else{
+				let type = $("select").val();
+				if(type == "day"){
+					//일별 박스오피스
+					let mdate = $("input").val();
+					let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/"
+						+"searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+mdate;
+					//alert(url);
+					$.getJSON(url, function(kobis){
+						//순위, 영화제목, 개봉일, 누적관객수, 상영횟수			
+						let output = "<div id='d2'><h1>"+ kobis.boxOfficeResult.boxofficeType +"</h1>" ;
+						output += "<h3>"+ kobis.boxOfficeResult.showRange +"</h3>";
+						output += "<table border=1>";
+						output += "<tr>";
+						output += "<th>순위</th>";
+						output += "<th>영화제목</th>";
+						output += "<th>개봉일</th>";
+						output += "<th>누적관객수</th>";
+						output += "<th>상영횟수</th>";
+						output += "</tr>";
+						
+						for(obj of kobis.boxOfficeResult.dailyBoxOfficeList){
+							output += "<tr>";
+							output += "<td>"+ obj.rank +"</td>";
+							output += "<td>"+ obj.movieNm +"</td>";
+							output += "<td>"+ obj.openDt +"</td>";
+							output += "<td>"+ obj.audiAcc +"</td>";
+							output += "<td>"+ obj.showCnt +"</td>";
+							output += "</tr>";			
+						}				
+						output += "</table></div>";
+						
+						//기존 리스트를 삭제!!
+						$("#d2").remove();
+						
+						$("#d1").after(output);
+						
+					});
+				}else{
+					//주말 박스오피스
+					let mdate = $("input").val();
+					let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+mdate;
+					//alert(url);
+					$.getJSON(url, function(kobis){
+						//순위, 영화제목, 개봉일, 누적관객수, 상영횟수			
+						let output = "<div id='d2'><h1>"+ kobis.boxOfficeResult.boxofficeType +"</h1>" ;
+						output += "<h3>"+ kobis.boxOfficeResult.showRange +"</h3>";
+						output += "<table border=1>";
+						output += "<tr>";
+						output += "<th>순위</th>";
+						output += "<th>영화제목</th>";
+						output += "<th>개봉일</th>";
+						output += "<th>누적관객수</th>";
+						output += "<th>상영횟수</th>";
+						output += "</tr>";
+						
+						for(obj of kobis.boxOfficeResult.weeklyBoxOfficeList){
+							output += "<tr>";
+							output += "<td>"+ obj.rank +"</td>";
+							output += "<td>"+ obj.movieNm +"</td>";
+							output += "<td>"+ obj.openDt +"</td>";
+							output += "<td>"+ obj.audiAcc +"</td>";
+							output += "<td>"+ obj.showCnt +"</td>";
+							output += "</tr>";			
+						}				
+						output += "</table></div>";
+						
+						//기존 리스트를 삭제!!
+						$("#d2").remove();
+						
+						$("#d1").after(output);
+					});
+				}
+			}			
+			
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>KOBIS 영화 박스오피스</h1>
+	<div id="d1">
+		<span>박스오피스 선택</span>
+		<select>
+			<option value="default">선택</option>
+			<option value="day">일별</option>
+			<option value="week">주말</option>
+		</select>
+		<input type="text" placeholder="날짜입력 예)20220701">
+		<button type="button">실행</button>
+	</div>
+</body>
+</html>
+
+
+
+
