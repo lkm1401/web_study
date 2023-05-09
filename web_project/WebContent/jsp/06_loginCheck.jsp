@@ -17,6 +17,7 @@
 	}else{
 		//loginResult = "실패";  
 		//06_loginFail.jsp 이동
+		System.out.println(id);
 		response.sendRedirect("06_loginFail.jsp");
 	}
 %>
