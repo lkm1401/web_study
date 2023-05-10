@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.beans.web_project.JoinVo" %>
-    
-<%
+
+<jsp:useBean id="joinVo" class="com.beans.web_project.JoinVo"></jsp:useBean>
+<jsp:setProperty name="joinVo" property="*"  />
+   
+<%--
 	JoinVo joinVo = new JoinVo();
 
 	//회원가입폼에서 넘어오는 데이터 변수에 저장
@@ -20,7 +23,7 @@
 	joinVo.setPhone3(request.getParameter("phone3"));
 	joinVo.setHobby(request.getParameterValues("hobby"));
 	joinVo.setIntro(request.getParameter("intro"));	
-%>
+--%>
     
 <!DOCTYPE html>
 <html>
@@ -29,11 +32,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원가입 정보</h1>
+	<h1>회원가입 정보 - JavaBean 연동</h1>
 	<ul>
 		<li>
 			<label>아이디 : </label>
-			<span><%= joinVo.getId() %></span>
+			<span><jsp:getProperty name="joinVo" property="id"/></span>
 		</li>
 		<li>
 			<label>패스워드 : </label>
