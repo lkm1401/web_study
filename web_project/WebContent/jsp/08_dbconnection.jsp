@@ -26,12 +26,18 @@
 	//5. 데이터 출력
 	ArrayList<EmpVo> list = new ArrayList<EmpVo>();
 	while(rs.next()){
-		out.write("<h1>"+ rs.getInt(1) +"</h1>");
-		out.write(rs.getString(2));
-		out.write(rs.getInt(3));
+		EmpVo empVo = new EmpVo();
+		empVo.setEmpno(rs.getInt(1));
+		empVo.setEname(rs.getString(2));
+		empVo.setDeptno(rs.getInt(3));
+		list.add(empVo);
 	}
-%>      
-    
+	
+	//6. close
+	if(rs != null) rs.close();
+	if(pstmt != null) pstmt.close();
+	if(conn != null) conn.close();
+%>          
     
 <!DOCTYPE html>
 <html>
@@ -40,6 +46,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>Emp 사원 정보</h1>
+	<table border=1>
+		<tr>
+			<th>사원번호</th>
+			<th>사원명</th>
+			<th>부서번호</th>
+		</tr>
+		<% for(EmpVo empVo : list){ %>
+		<tr>
+			<td><%= empVo.getEmpno() %></td>
+			<td><%= empVo.getEname() %></td>
+			<td><%= empVo.getDeptno() %></td>
+		</tr>
+		<% } %>
+	</table>
 </body>
 </html>
+
+
+
+
+
+
+
